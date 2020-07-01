@@ -6,30 +6,61 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Dynamic title';
-  number = 42;
-  arr = [1, 2, 3];
-  obj = { a: 1, b: {c: 2} };
-  // example 1
-  // img = 'https://ensocore.com/media/61/reactjs-logo-sticker%20%281%29.jpg';
-  inputValue = '';
-  constructor() {
-    // example 1
-    // setTimeout(() => {
-    //   console.log('Timeout is over');
-    //   this.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png';
-    // }, 5000);
-  }
-  // onInput(event?: any) {
-  onInput(event: KeyboardEvent) {
-    console.log('Event', event)
-    // this.inputValue = event.target.value;
-    this.inputValue = (<HTMLInputElement>event.target).value;
-  }
-  onBlur(str: string){
-    this.inputValue = str;
-  }
-  onClick() {
-    console.log('Click!');
-  }
+
+  // 8  =====================
+  // now: Date = new Date();
+  // 7  =====================
+  // arr = [1, 1, 2, 3, 5, 8, 13];
+  // objs = [
+  //   {title: 'Post 1', author: 'Vladilen', comments: [
+  //       {name: 'Max', text: 'lorem 1'},
+  //       {name: 'Max', text: 'lorem 2'},
+  //       {name: 'Max', text: 'lorem 3'},
+  //     ]},
+  //   {title: 'Post 2', author: 'Vladilen 2', comments: [
+  //       {name: 'Max 2', text: 'lorem 1'},
+  //       {name: 'Max 2', text: 'lorem 2'},
+  //       {name: 'Max 2', text: 'lorem 3'},
+  //     ]}
+  // ];
+  // 6  =====================
+  // toggle: any = false;
+  // 5  =====================
+  // toggle = false;
+  // 3, 4  =====================
+  // backgroundToggle = false;
+  // 2 =====================
+  // title = 'Initial';
+  // onInput(event: any) {
+  //   this.title = event.target.value;
+  // }
+  // =====================
+  // title = 'Dynamic title';
+  // number = 42;
+  // arr = [1, 2, 3];
+  // obj = { a: 1, b: {c: 2} };
+  // // example 1
+  // // example 1
+  // // img = 'https://ensocore.com/media/61/reactjs-logo-sticker%20%281%29.jpg';
+  // inputValue = '';
+  // constructor() {
+  //   // example 1
+  //   // setTimeout(() => {
+  //   //   console.log('Timeout is over');
+  // //   this.img = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/250px-Angular_full_color_logo.svg.png';
+  //   // }, 5000);
+  // }
+  // // onInput(event?: any) {
+  // onInput(event: KeyboardEvent) {
+  //   console.log('Event', event)
+  //   // this.inputValue = event.target.value;
+  //   this.inputValue = (<HTMLInputElement>event.target).value;
+  // }
+  // onBlur(str: string){
+  //   this.inputValue = str;
+  // }
+  // onClick() {
+  //   console.log('Click!');
+  // }
+  // =====================
 }

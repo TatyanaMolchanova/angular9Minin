@@ -1,4 +1,133 @@
-<h1>Hello Angular World!</h1>
+<div class="container">
+    <h1>Angular Components</h1>
+
+    <app-post-form></app-post-form>
+
+    <hr />
+
+    <app-post></app-post>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--8 =====================-->
+<!--<h1>Hello Angular World!</h1>-->
+
+<!--<p>-->
+    <!--&lt;!&ndash;{{now | date }}&ndash;&gt;-->
+    <!--{{now | date:'long' | uppercase }}-->
+<!--</p>-->
+
+<!--7 =====================-->
+<!--&lt;!&ndash;<ul>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li *ngFor="let number of arr; let idx = index">&ndash;&gt;-->
+        <!--&lt;!&ndash;{{idx + 1}} - <strong>{{number}}</strong>&ndash;&gt;-->
+    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+
+<!--<ul style="list-style: none">-->
+    <!--<li *ngFor="let post of objs">-->
+        <!--<p>{{post.title}} <b>{{post.author}}</b></p>-->
+        <!--<ul>-->
+            <!--<li *ngFor="let comment of post.comments">-->
+                <!--<div>-->
+                    <!--<small>{{comment.name}}</small>-->
+                    <!--<p>{{comment.text}}</p>-->
+                <!--</div>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</li>-->
+<!--</ul>-->
+
+<!--6 =====================-->
+<!--<button (click)="toggle = !toggle">Toggle</button>-->
+<!--<button (click)="toggle = 111">Set 111</button>-->
+
+<!--<div [ngSwitch]="toggle">-->
+    <!--<p *ngSwitchCase="true" class="red">Lorem ipsum.</p>-->
+    <!--<p *ngSwitchCase="false" class="blue">Lorem ipsum Lorem ipsum.</p>-->
+    <!--<p *ngSwitchDefault>Lorem ipsum.</p>-->
+<!--</div>-->
+
+<!--5 =====================-->
+<!--<button (click)="toggle = !toggle">Toggle</button>-->
+
+<!--&lt;!&ndash;<p *ngIf="toggle" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, repellendus.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p *ngIf="!toggle" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, esse!</p>&ndash;&gt;-->
+
+<!--<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, repellendus.</p>-->
+
+<!--<ng-template #blueP>-->
+    <!--<p *ngIf="!toggle" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, esse!</p>-->
+<!--</ng-template>-->
+
+<!--4 =====================-->
+<!--<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>-->
+
+<!--&lt;!&ndash;<p [ngClass]="{&ndash;&gt;-->
+    <!--&lt;!&ndash;red: backgroundToggle,&ndash;&gt;-->
+    <!--&lt;!&ndash;blue: !backgroundToggle&ndash;&gt;-->
+<!--&lt;!&ndash;}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quam.</p>&ndash;&gt;-->
+
+<!--<p [class.blue]="!backgroundToggle"-->
+   <!--[class.red]="backgroundToggle"-->
+<!--&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, veritatis.</p>-->
+
+<!--3 =====================-->
+<!--<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>-->
+
+<!--<div [ngStyle]="{-->
+    <!--width: '200px',-->
+    <!--height: '200px',-->
+    <!--borderRadius: '5px',-->
+    <!--border: '1px solid #ccc',-->
+    <!--background: backgroundToggle ? 'red' : 'blue'-->
+<!--}"></div>-->
+
+<!--2 =====================-->
+<!--&lt;!&ndash;<input type="text" [value]="title" (input)="onInput($event)">&ndash;&gt;-->
+<!--<input type="text" [(ngModel)]="title"> // 2-way binding needs FormModule in app.module.ts in imports and import-->
+
+<!--<p>{{title}}</p>-->
+
+<!-- ============= -->
 
 <!--<p>{{ title }}</p>-->
 
@@ -11,24 +140,28 @@
 <!-- example 1 -->
 <!--<img [src]="img" alt="">-->
 
-<button (click)="onClick()">Click me!</button>
+<!-- ============= -->
 
-<!--<input type="text" (keyup)="onInput($event)">-->
-<!--<input type="text" (keyup.enter)="onInput($event)">-->
-<input
-        type="text"
-        (keyup.enter)="onInput($event)"
-        (blur)="onBlur(myInput.value)"
-        #myInput
->
-<p><strong>{{ inputValue }}</strong></p>
+<!--<button (click)="onClick()">Click me!</button>-->
 
-<hr>
+<!--&lt;!&ndash;<input type="text" (keyup)="onInput($event)">&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="text" (keyup.enter)="onInput($event)">&ndash;&gt;-->
+<!--<input-->
+        <!--type="text"-->
+        <!--(keyup.enter)="onInput($event)"-->
+        <!--(blur)="onBlur(myInput.value)"-->
+        <!--#myInput-->
+<!--&gt;-->
+<!--<p><strong>{{ inputValue }}</strong></p>-->
 
-<app-post></app-post>
+<!--<hr>-->
 
 <!--<app-post></app-post>-->
 
-<hr>
+<!--&lt;!&ndash;<app-post></app-post>&ndash;&gt;-->
 
-<app-post4></app-post4>
+<!--<hr>-->
+
+<!--<app-post4></app-post4>-->
+
+<!-- ============= -->
