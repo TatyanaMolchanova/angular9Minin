@@ -1,11 +1,36 @@
 <div class="container">
     <h1>Angular Components</h1>
 
-    <app-post-form></app-post-form>
+    <h2>Subheader</h2>
+
+    <app-post-form
+        (onAdd)="updatePosts($event)"
+    ></app-post-form>
 
     <hr />
 
-    <app-post></app-post>
+    <app-post
+            *ngFor="let p of posts"
+            [post]="p"
+            (onRemove)="removePost($event)"
+    >
+        <div #info>
+            <small *ngIf="p.text.length > 10; else short">Пост длинный</small>
+            <ng-template #short>
+                <small>Пост короткий</small>
+            </ng-template>
+        </div>
+    </app-post>
+
+    <!--<app-post-->
+      <!--*ngFor="let p of posts"-->
+      <!--[post]="p"-->
+    <!--&gt;</app-post>-->
+
+    <!--<app-post-->
+        <!--*ngFor="let p of posts"-->
+        <!--[myPost]="p"-->
+    <!--&gt;</app-post>-->
 </div>
 
 
