@@ -4,13 +4,11 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {StyleDirective} from './directives/style.directive';
-import { Style2Directive } from './style2.directive';
 
 @NgModule({
   declarations: [
       AppComponent,
-      StyleDirective,
-      Style2Directive
+      StyleDirective
   ],
   imports: [
       BrowserModule,
