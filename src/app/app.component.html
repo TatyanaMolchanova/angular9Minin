@@ -7,6 +7,19 @@
     <p appStyle="blue" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.
     </p>
+
+    <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+
+    <!--<div *ngIf="isVisible" class="wrap">-->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>-->
+    <!--</div>-->
+
+    <ng-template [ngIf]="isVisible">
+        <div class="wrap">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>
+        </div>
+    </ng-template>
+
     <!--<p appStyle="red" fontWeight="bold">-->
         <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.-->
     <!--</p>-->
