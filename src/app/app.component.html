@@ -1,32 +1,125 @@
 <div class="container">
-    <h1>Angular Directives</h1>
+    <h1>Angular Pipes</h1>
 
-    <p appStyle="red" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.
+    <p style="font-weight: bold">Pipe mult created by Myself</p>
+
+    <p>{{ 10 | mult }}</p>
+    <p>{{ 10 | mult:2 }}</p>
+    <p>{{ 10 | mult:3 }}</p>
+    <p>{{ 10 | mult:4 }}</p>
+    <p>{{ 10 | mult:5 }}</p>
+    <p>{{ 10 | mult:6 }}</p>
+    <p>{{ 10 | mult:13 }}</p>
+    <p>{{ 10 | mult:8}}</p>
+
+
+    <p style="font-weight: bold">Float</p>
+
+    <p>{{ float }}</p>
+    <p>{{ float | currency }}</p>
+    <p>{{ float | percent:'3.1-2'}}</p>
+    <p>{{ float | percent:'2.0-0'}}</p>
+
+    <pre>{{ obj | json }}</pre>
+    <p>{{ obj | json }}</p>
+
+
+    <p style="font-weight: bold">Date</p>
+
+    <p>
+        {{ date | date }}
     </p>
-    <p appStyle="blue" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.
+
+    <p>
+        {{ date | date:'long' }}
     </p>
 
-    <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+    <p>
+        {{ date | date:'MMMM dd, yy' }}
+    </p>
 
-    <!--<div *ngIf="isVisible" class="wrap">-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>-->
-    <!--</div>-->
+    <p>
+        {{ date | date:'MMMM dd, yy, HH:mm:ss' }}
+    </p>
 
-    <ng-template [ngIf]="isVisible">
-        <div class="wrap">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>
-        </div>
-    </ng-template>
+    <p style="font-weight: bold">String</p>
 
-    <!--<p appStyle="red" fontWeight="bold">-->
+    <p>
+        {{ str | uppercase }}
+    </p>
+
+    <p>
+        {{ str | uppercase | lowercase | titlecase }}
+    </p>
+
+    <p>
+        {{ str | titlecase | slice:1:-2 }}
+    </p>
+
+    <p style="font-weight: bold">Number</p>
+
+    <p>
+        {{ e | number:'1.1-5' }}
+    </p>
+
+    <p>
+        {{ e | number:'3.1-2' }}
+    </p>
+
+    <p>
+        {{ e | number:'1.0-0' }}
+    </p>
+
+    <p>
+        {{ e | number:'1.0' }}
+    </p>
+</div>
+
+
+
+
+<!-- Code for directives -->
+<!--<div class="container">-->
+    <!--<h1>Angular Directives</h1>-->
+
+    <!--<p appStyle="red" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">-->
         <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.-->
     <!--</p>-->
-    <!--<p [appStyle]="'red'" fontWeight="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.</p>  // If we pass string no need to bind attribute with [appStyle] brackets-->
-    <!--<p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.</p>-->
+    <!--<p appStyle="blue" [dStyles]="{border: '1px solid red', borderRadius: '15px'}">-->
+        <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.-->
+    <!--</p>-->
 
-</div>
+    <!--<button class="btn" (click)="isVisible = !isVisible">Toggle</button>-->
+
+    <!--&lt;!&ndash;<div class="wrap" *appIfnot="!isVisible">&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--<ng-template [appIfnot]="!isVisible">-->
+        <!--<div class="wrap">-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>-->
+        <!--</div>-->
+    <!--</ng-template>-->
+
+    <!--&lt;!&ndash;<div *ngIf="isVisible" class="wrap">&ndash;&gt;-->
+        <!--&lt;!&ndash;<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<ng-template [ngIf]="isVisible">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="wrap">&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur distinctio dolor eveniet excepturi itaque odio quasi quod repellat voluptatibus?</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
+
+
+
+    <!--&lt;!&ndash;<p appStyle="red" fontWeight="bold">&ndash;&gt;-->
+        <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.&ndash;&gt;-->
+    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p [appStyle]="'red'" fontWeight="bold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.</p>  // If we pass string no need to bind attribute with [appStyle] brackets&ndash;&gt;-->
+    <!--&lt;!&ndash;<p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, magnam.</p>&ndash;&gt;-->
+
+<!--</div>-->
 
 
 
