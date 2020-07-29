@@ -1,26 +1,51 @@
 import {Component} from '@angular/core';
 
+export interface Post {
+  title: string;
+  text: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  e: number = Math.E;
-  str = 'hello world';
-  date: Date = new Date();
-  float = 0.42;
-  obj = {
-    a: 1,
-    b: {
-      c: 2,
-      d: {
-        e: 3,
-        f: 4
-      }
-    }
-  };
+  search = '';
+ posts: Post[] = [
+   {title: 'Beer', text: 'The best beer in the world'},
+   {title: 'Bread', text: 'The best bread in the world'},
+   {title: 'Javascript', text: 'The best language in the world'},
+ ];
 }
+
+
+
+// Pipes
+// import {Component} from '@angular/core';
+//
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.scss']
+// })
+// export class AppComponent {
+//   e: number = Math.E;
+//   str = 'hello world';
+//   date: Date = new Date();
+//   float = 0.42;
+//   obj = {
+//     a: 1,
+//     b: {
+//       c: 2,
+//       d: {
+//         e: 3,
+//         f: 4
+//       }
+//     }
+//   };
+// }
+
 
 
 // Code for Directives
