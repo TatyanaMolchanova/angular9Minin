@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
 
 export interface Post {
   title: string;
@@ -10,15 +11,70 @@ export interface Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  search = '';
- posts: Post[] = [
-   {title: 'Beer', text: 'The best beer in the world'},
-   {title: 'Bread', text: 'The best bread in the world'},
-   {title: 'Javascript', text: 'The best language in the world'},
- ];
+
+export class AppComponent implements OnInit {
+  p: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve('Promise Resolved');
+    }, 4000);
+  });
+  date$: Observable<Date> = new Observable(obs => {
+   setInterval( () => {
+     obs.next(new Date());
+   }, 1000);
+  });
+  date: Date;
+  ngOnInit(): void {
+    this.date$.subscribe(date => {
+      this.date = date;
+    });
+  }
 }
 
+// with async pipe
+// export class AppComponent {
+//   p: Promise<string> = new Promise<string>(resolve => {
+//     setTimeout(() => {
+//       resolve('Promise Resolved');
+//     }, 4000);
+//   });
+//   date: Observable<Date> = new Observable(obs => {
+//     setInterval( () => {
+//       obs.next(new Date());
+//     }, 1000);
+//   });
+// }
+
+
+// pipe ||
+// import {Component} from '@angular/core';
+//
+// export interface Post {
+//   title: string;
+//   text: string;
+// }
+//
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.scss']
+// })
+// export class AppComponent {
+//   search = '';
+//   searchField = 'title';
+//   posts: Post[] = [
+//     {title: 'Beer', text: 'The best beer in the world'},
+//     {title: 'Bread', text: 'The best bread in the world'},
+//     {title: 'Javascript', text: 'The best language in the world'},
+//   ];
+//
+//   addPost() {
+//     this.posts.unshift({
+//       title: 'Angular 8',
+//       text: 'Vladilen teacher'
+//     });
+//   }
+// }
 
 
 // Pipes
