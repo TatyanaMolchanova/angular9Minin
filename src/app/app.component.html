@@ -1,20 +1,66 @@
 <div class="container">
-    <h1>Angular Pipes</h1>
+    <h1>Angular Services</h1>
 
-    <p>Wait for it... {{ p | async }}</p>
+    <div class="card">
+        <h2>App Counter: {{appCounterService.counter}}</h2>
 
-    <p>Date: {{ date$ | async | date:'HH:mm:ss yyyy' }}</p>
+        <button class="btn" (click)="appCounterService.increase()">+</button>
+        <button class="btn" (click)="appCounterService.decrease()">-</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<h1>Angular Pipes</h1>-->
+
+    <!--<p>Wait for it... {{ p | async }}</p>-->
+
+    <!--<p>Date: {{ date$ | async | date:'HH:mm:ss yyyy' }}</p>-->
     <!--<p>Date: {{ date | async | date:'HH:mm:ss yyyy' }}</p>-->
 
     <!--<p>{{ date | date:'HH:mm:ss yyyy'}}</p>-->
-
-
-
-
-
-
-
-
 
 
 
