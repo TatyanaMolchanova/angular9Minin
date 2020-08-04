@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {AppCounterService} from '../services/app-counter.service';
+import {LocalCounterService} from '../services/local-counter.service';
 
+// local scope
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
-  styleUrls: ['./counter.component.scss']
+  styleUrls: ['./counter.component.scss'],
+  providers: [LocalCounterService]
 })
-export class CounterComponent implements OnInit {
+export class CounterComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(
+      private appCounterService: AppCounterService,
+      private localCounterService: LocalCounterService
+  ) {}
 
 }
