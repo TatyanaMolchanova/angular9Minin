@@ -1,20 +1,55 @@
-import {Component} from '@angular/core';
-import {AppCounterService} from './services/app-counter.service';
-import {LocalCounterService} from './services/local-counter.service';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [LocalCounterService]
+  styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
-  constructor(
-      private appCounterService: AppCounterService,
-      private localCounterService: LocalCounterService
-      ) {}
+export class AppComponent implements OnInit {
+    form: FormGroup;
+
+    ngOnInit() {
+        this.form = new FormGroup({
+            email: new FormControl('', [
+                Validators.email, Validators.required
+            ]),
+            password: new FormControl(null, [
+                Validators.required,
+                Validators.minLength(12)
+            ])
+        });
+    }
+
+    submit() {
+        if (this.form.valid) {
+            console.log('Form: ', this.form);
+            const formData = {...this.form.value};
+
+            console.log('Form Data:', formData);
+        }
+    }
 }
+
+// Services
+// import {Component} from '@angular/core';
+// import {AppCounterService} from './services/app-counter.service';
+// import {LocalCounterService} from './services/local-counter.service';
+//
+// @Component({
+//     selector: 'app-root',
+//     templateUrl: './app.component.html',
+//     styleUrls: ['./app.component.scss'],
+//     providers: [LocalCounterService]
+// })
+//
+// export class AppComponent {
+//     constructor(
+//         private appCounterService: AppCounterService,
+//         private localCounterService: LocalCounterService
+//     ) {}
+// }
 
 // end Pipe
 // import {Component, OnInit} from '@angular/core';
